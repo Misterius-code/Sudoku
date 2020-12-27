@@ -1,19 +1,15 @@
-
 import math
 
+
 def solveSudoku():
-    possible_number = [*range(1, 10)]
-    findEmpty()
     empty = findEmpty()
     row = empty[0]
     cell = empty[1]
-    for i in range(1,10):
-        if validSudoku(i):
-            board[row][cell]=i
-            print(board[row][cell])
-        print_SudokuBoard()
+    possible_number = [*range(1, 10)]
+    validSudoku()
 
-#Finding 0 in the grid
+
+# Finding 0 in the grid
 def findEmpty():
     for i in range(len(board)):
         for j in range(len(board[i])):
@@ -21,12 +17,7 @@ def findEmpty():
                 return [i, j]
 
 
-def validSudoku(nr):
-
-
-    empty = findEmpty()
-    row = empty[0]
-    cell = empty[1]
+def validSudoku(nr,row,cell):
 
 
     for i in range(len(board[row])):
@@ -34,7 +25,7 @@ def validSudoku(nr):
         if board[row].__contains__(nr):  # or board[1][0]==(i+1)  :
             return False
         # possible_number.remove(i+1)
-        elif board[i][cell]==(nr):
+        elif board[i][cell] == (nr):
             return False
 
     # print(squareY)
@@ -43,14 +34,14 @@ def validSudoku(nr):
     squareY = math.floor(cell / 3)
     for j in range(3):
         for z in range(3):
-            print(board[j+3*squareX][z+3*squareY])
-            if board[j+3*squareX][z+3*squareY] == nr :
+            print(board[j + 3 * squareX][z + 3 * squareY])
+            if board[j + 3 * squareX][z + 3 * squareY] == nr:
                 return False
 
     return True
 
 
-#Test board
+# Test board
 board = [
     [7, 8, 0, 4, 0, 0, 1, 2, 0],
     [6, 0, 0, 0, 7, 5, 0, 0, 9],
@@ -76,7 +67,7 @@ def print_SudokuBoard():
     middleOfSquare = "║" + middleOfSquare
 
     print(topOfSquare)
-#Creating board
+    # Creating board
     for i in range(len(board)):
         print("║", end="")
         for j in range(len(board[i])):
@@ -98,6 +89,3 @@ def print_SudokuBoard():
 if __name__ == '__main__':
     print_SudokuBoard()
     solveSudoku()
-
-
-
