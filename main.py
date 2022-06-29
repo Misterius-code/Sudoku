@@ -3,6 +3,7 @@ import math
 import random
 import time
 import subprocess, platform
+import colorama
 #count how many times validation was called
 counter=[0]
 def countBack(relase):
@@ -35,6 +36,7 @@ def solveSudoku(currentBoard,stepByStep):
                 print("")
 
             currentBoard[row][cell] = i
+            print("Current NR",i)
             if solveSudoku(currentBoard,stepByStep):
                 return True
             currentBoard[row][cell] = 0
@@ -144,6 +146,7 @@ if __name__ == '__main__':
     print("Welcome To Sudoku Solver by Carlos and Michal")
     print("""We are happy to show you our sudoku solver
     """)
+    colorama.init(autoreset=True)
 
     gridNr = input("Press any character and then enter to continue ")
     if (gridNr):
