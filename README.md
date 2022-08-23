@@ -14,7 +14,7 @@ I tested sudoku on 5000 different boards to see how many tries it takes to finis
 <img align="center" src="https://user-images.githubusercontent.com/55873838/186252546-2fb2c5b7-ab0d-4069-9415-7ab6e9918a9b.png">
 
 </p>
-<h1 align="center">Feature Updates/h1> <br>
+<h1 align="center">Feature Updates</h1> <br>
 
 I have in mind few improvements to this software which could make it an even better projects. Definitely a good improvement would be to add other methods of solving sudoku , creating GUI and optimize code.
 
